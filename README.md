@@ -18,14 +18,14 @@ The [App Service](jspdfexample/innovaphone-jspdfexampleservice.js) creates a PDF
 
 The PDF is created on the App Service (innovaphone-jspdfexampleservice.js) with the following usage of the PDFLib library:
 ```javascript
-    var PDFDocument = PDFLib.PDFDocument;
-    var PageSizes = PDFLib.PageSizes;
-    var doc = PDFDocument.create();
-    doc.then(function (pdfDoc) {
-        var page = pdfDoc.addPage(PageSizes.A7);
-        page.drawText("Hello, " + name + "!", { x: 24, y: 180, size: 12 });
-        pdfDoc.saveAsBase64({ dataUri: true }).then(function (pdfDataUri) {
-            callback(pdfDataUri); // send data via a callback to the JSON API handler
-        });
+var PDFDocument = PDFLib.PDFDocument;
+var PageSizes = PDFLib.PageSizes;
+var doc = PDFDocument.create();
+doc.then(function (pdfDoc) {
+    var page = pdfDoc.addPage(PageSizes.A7);
+    page.drawText("Hello, " + name + "!", { x: 24, y: 180, size: 12 });
+    pdfDoc.saveAsBase64({ dataUri: true }).then(function (pdfDataUri) {
+        callback(pdfDataUri); // send data via a callback to the JSON API handler
     });
+});
 ```
