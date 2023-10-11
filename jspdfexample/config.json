@@ -1,0 +1,12 @@
+{
+    "javascript": {
+        "eval": [
+            "global.js",
+            "promise.js",
+            "es6-shim.js",
+            "es7-shim.js",
+            "pdf-lib.js",
+            "innovaphone-jspdfexampleservice.js"
+        ]
+    }
+}
