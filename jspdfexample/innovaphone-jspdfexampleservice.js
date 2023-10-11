@@ -6,7 +6,7 @@ var createPdfWithName = function (name, callback) {
         var page = pdfDoc.addPage(PageSizes.A7);
         page.drawText("Hello, " + name + "!", { x: 24, y: 180, size: 12 });
         pdfDoc.saveAsBase64({ dataUri: true }).then(function (pdfDataUri) {
-            callback(pdfDataUri);
+            callback(pdfDataUri);  // send data via a callback to the JSON API handler
         });
     });
 };
