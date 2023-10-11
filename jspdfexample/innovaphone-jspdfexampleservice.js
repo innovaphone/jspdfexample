@@ -26,16 +26,3 @@ new JsonApi("PDFApi").onconnected(function (conn) {
         });
     }
 });
-
-
-
-
-
-/*
-
-const pdfDoc = await PDFDocument.create()
-const page = pdfDoc.addPage()
-page.drawText('You can create PDFs!')
-const pdfBytes = await pdfDoc.save()
-
-*/
