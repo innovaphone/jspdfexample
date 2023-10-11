@@ -18,6 +18,7 @@ new JsonApi("PDFApi").onconnected(function (conn) {
             var obj = JSON.parse(msg);
             if (obj.mt === "GetPDF" && "name" in obj && obj.name !== "") {
                 var callback = function (data) {
+                    if (data.length > 50000) return; // WebSocket can not handle longer messages, use streaming for bigger PDFs
                     conn.send(JSON.stringify({ api: "PDFApi", mt: "GetPDFResult", data: data, src: obj.src }));
                 };
                 createPdfWithName(obj.name, callback);
